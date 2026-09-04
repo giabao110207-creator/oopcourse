@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #include <iostream>
 #include <string>
 using namespace std;
@@ -127,5 +125,4 @@ int main()
 
     return 0;
 }
->>>>>>> c0ca25f (Add week4)
 
