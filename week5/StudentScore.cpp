@@ -182,6 +182,25 @@ else {
          << secondHighest << endl;
 }
 
+// 5. SEARCH FOR A SCORE
+double x;
+bool found = false;
+
+cout << "===== 5. SEARCH FOR A SCORE =====";
+cout << "Enter score to search: ";
+cin >> x;
+
+cout << "Found at:";
+
+for (int i = 0; i < n; i++) {
+    if (scores[i] == x) {
+        cout << "Student " << i + 1 << endl;
+        found = true;
+    }
+}
+if (!found) {
+        cout << "Score not found!";
+}
 
 return 0;
 }
