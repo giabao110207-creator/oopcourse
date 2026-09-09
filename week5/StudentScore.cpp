@@ -45,5 +45,24 @@ for (int i = 0; i < n; i++){
         cout << "Fail " << endl;
     }
 }
+
+//Count students
+int pass = 0;
+int fail = 0;
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 5){
+        pass++;
+    }else{
+        fail++;
+    }
+}
+double passRate = (double)pass / n * 100;
+
+cout << endl;
+cout << "=====STATISTICS=====" << endl;
+cout << "Pass: " << pass << "students " << endl;
+cout << "Fail: " << fail << "students " << endl;
+cout << "Pass Rate: " << passRate << "%" << endl;
+
 return 0;
 }
