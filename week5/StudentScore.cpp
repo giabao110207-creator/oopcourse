@@ -1,1 +1,112 @@
+#include <iostream>
+using namespace std;
 
+int main(){
+    int n;
+    cout << "How many students: " << endl;
+    cin >> n;
+
+while (n < 2 || n > 20)
+{
+    cout << "Invalid number of students!" << endl;
+    cout << "Please enter a number from 2 to 20." << endl;
+    cout << "How many students? ";
+    cin >> n;
+}
+
+//Enter the scores of the students
+double scores[20];
+for (int i = 0; i < n; i++){
+    cout << "Enter the score of student " << i + 1 << ": ";
+    cin >> scores[i];
+
+while (scores[i] < 0 || scores[i] > 10)
+    {
+        cout << "Invalid score! Please enter a value from 0 to 10: ";
+        cin >> scores[i];
+    }
+}
+
+//Display the array
+cout << endl;
+cout << "=====STUDENTS SCORES=====: " << endl;
+for (int i = 0; i < n; i++){
+    cout << "Student " << i + 1 << ": " << scores[i] << endl;
+}
+
+//Pass or fail
+cout << endl;
+for (int i = 0; i < n; i++){
+    cout << "student " << i + 1 << ": ";
+    if (scores[i] >= 5){
+        cout << "Pass " << endl;
+    }
+    else{
+        cout << "Fail " << endl;
+    }
+}
+
+//Count students
+int pass = 0;
+int fail = 0;
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 5){
+        pass++;
+    }else{
+        fail++;
+    }
+}
+double passRate = (double)pass / n * 100;
+
+cout << endl;
+cout << "=====STATISTICS=====" << endl;
+cout << "Pass: " << pass << "students " << endl;
+cout << "Fail: " << fail << "students " << endl;
+cout << "Pass Rate: " << passRate << "%" << endl;
+
+//Find the highest and lowest scores
+double highest = scores[0];
+double lowest = scores[0];
+
+for (int i = 0; i < n; i++){
+    if (scores[i] > highest){
+        highest = scores[i];
+    }
+    if (scores[i] < lowest){
+        lowest = scores[i];
+    }
+}
+cout << "Highest score: " << highest << endl;
+cout << "lowest score: " << lowest << endl;
+
+//Classify students
+cout << endl;
+cout << "=====CLASSIFY STUDENTS=====" << endl;
+for (int i = 0; i < n; i++)
+{
+    cout << "Student " << i + 1 << ": " << scores[i] << " -> ";
+    if (scores[i] >= 9)
+    {
+        cout << "Excellent";
+    }
+    else if (scores[i] >= 8)
+    {
+        cout << "Very Good";
+    }
+    else if (scores[i] >= 6.5)
+    {
+        cout << "Good";
+    }
+    else if (scores[i] >= 5)
+    {
+        cout << "Average";
+    }
+    else
+    {
+        cout << "Fail";
+    }
+    cout << endl;
+}
+
+return 0;
+}
