@@ -241,6 +241,17 @@ else {
          << ": " << scores[firstFail] << endl;
 }
 
+// 8. COMPARE ADJACENT STUDENTS
+cout << "=====COMPARE ADJACENT STUDENTS=====";
+
+for (int i = 0; i < n - 1; i++) {
+
+    if (scores[i + 1] > scores[i]) {
+        cout << "Student " << i + 2
+             << " improved compared to Student "
+             << i + 1 << endl;
+        }
+    }
 
 return 0;
 }
