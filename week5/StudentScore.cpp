@@ -156,5 +156,32 @@ for (int i = 0; i < n; i++) {
         }
     }
 
+//Find the second highest score
+double highest = scores[0];
+double secondHighest = -1;
+
+for (int i = 1; i < n; i++) {
+    if (scores[i] > highest) {
+        secondHighest = highest;
+        highest = scores[i];
+        }
+        else if (scores[i] > secondHighest &&
+                scores[i] < highest) {
+            secondHighest = scores[i];
+        }
+    }
+
+cout << "===== 4. FIND THE SECOND HIGHEST SCORE =====";
+cout << "Highest score: " << highest << endl;
+
+if (secondHighest == -1) {
+    cout << "There is no second highest score.";
+}
+else {
+    cout << "Second highest score: "
+         << secondHighest << endl;
+}
+
+
 return 0;
 }
