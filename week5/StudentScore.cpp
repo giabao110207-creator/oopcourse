@@ -135,7 +135,26 @@ cout << "Number of excellent students: " << count << endl;
     cout << "Students in range [" << a << ", " << b << "]: "
          << countRange << endl;
 
+//Find students above averrage
+double sum = 0;
+double average;
 
+for (int i = 0; i < n; i++) {
+    sum += scores[i];
+}
+
+average = sum / n;
+
+cout << "===== FIND STUDENTS ABOVE AVERAGE =====";
+cout << "Average score: " << average << endl;
+cout << "Students above average: ";
+
+for (int i = 0; i < n; i++) {
+    if (scores[i] > average) {
+        cout << "Student " << i + 1
+             << ": " << scores[i] << endl;
+        }
+    }
 
 return 0;
 }
