@@ -182,7 +182,7 @@ else {
          << secondHighest << endl;
 }
 
-// 5. SEARCH FOR A SCORE
+//SEARCH FOR A SCORE
 double x;
 bool found = false;
 
@@ -202,5 +202,21 @@ if (!found) {
         cout << "Score not found!";
 }
 
+
+// 6. COUNT SCORE FREQUENCY
+int frequency = 0;
+
+cout << "=====COUNT SCORE FREQUENCY=====";
+cout << "Enter score: ";
+cin >> x;
+
+for (int i = 0; i < n; i++) {
+    if (scores[i] == x) {
+            frequency++;
+    }
+}
+
+cout << "Score " << x << " appears "
+     << frequency << " times.\n";
 return 0;
 }
