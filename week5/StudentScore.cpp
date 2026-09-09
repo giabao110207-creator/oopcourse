@@ -108,5 +108,17 @@ for (int i = 0; i < n; i++)
     cout << endl;
 }
 
+//Count excellent students
+int count = 0;
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 9)
+    count++; 
+}
+
+cout << endl;
+cout << "=====EXCELLENT=====" << endl;
+cout << "Number of excellent students: " << count << endl;
+
+
 return 0;
 }
