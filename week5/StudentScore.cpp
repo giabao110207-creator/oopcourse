@@ -218,5 +218,29 @@ for (int i = 0; i < n; i++) {
 
 cout << "Score " << x << " appears "
      << frequency << " times.\n";
+
+
+// 7. FIND FIRST FAILING STUDENT
+int firstFail = -1;
+
+for (int i = 0; i < n; i++) {
+    if (scores[i] < 5) {
+            firstFail = i;
+            break;
+    }
+}
+
+cout << "=====FIND FIRST FAILING STUDENT=====";
+
+if (firstFail == -1) {
+    cout << "All students pass!\n";
+}
+else {
+    cout << "First failing student:\n";
+    cout << "Student " << firstFail + 1
+         << ": " << scores[firstFail] << endl;
+}
+
+
 return 0;
 }
