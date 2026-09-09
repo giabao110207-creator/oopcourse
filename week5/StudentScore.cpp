@@ -119,6 +119,23 @@ cout << endl;
 cout << "=====EXCELLENT=====" << endl;
 cout << "Number of excellent students: " << count << endl;
 
+//COUNT STUDENTS IN A SCORE RANGE
+    double a, b;
+    int countRange = 0;
+    cout << "===== 2. COUNT STUDENTS IN A SCORE RANGE =====";
+    cout << "Enter minimum score: ";
+    cin >> a;
+    cout << "Enter maximum score: ";
+    cin >> b;
+    for (int i = 0; i < n; i++) {
+        if (scores[i] >= a && scores[i] <= b) {
+            countRange++;
+        }
+    }
+    cout << "Students in range [" << a << ", " << b << "]: "
+         << countRange << endl;
+
+
 
 return 0;
 }
