@@ -274,5 +274,58 @@ for (int i = 0; i < n; i++) {
 cout << "=====FIND THE LONGEST PASS STREAK=====";
 cout << "Longest pass streak: "
      << longestStreak << " students";
+
+
+//10. CREATE A SCORE DISTRIBUTION
+int range1 = 0;
+int range2 = 0;
+int range3 = 0;
+int range4 = 0;
+int range5 = 0;
+for (int i = 0; i < n; i++) {
+    if (scores[i] < 5) {
+        range1++;
+    }
+    else if (scores[i] < 6.5) {
+        range2++;
+    }
+    else if (scores[i] < 8) {
+        range3++;
+    }
+    else if (scores[i] < 9) {
+        range4++;
+    }
+    else {
+        range5++;
+    }
+}
+
+cout << "=====SCORE DISTRIBUTION=====";
+
+cout << "0 - <5     : ";
+for (int i = 0; i < range1; i++)
+    cout << "*";
+cout << " " << range1 << endl;
+
+cout << "5 - <6.5   : ";
+for (int i = 0; i < range2; i++)
+    cout << "*";
+cout << " " << range2 << endl;
+
+cout << "6.5 - <8   : ";
+for (int i = 0; i < range3; i++)
+    cout << "*";
+cout << " " << range3 << endl;
+
+cout << "8 - <9     : ";
+for (int i = 0; i < range4; i++)
+    cout << "*";
+cout << " " << range4 << endl;
+
+cout << "9 - 10     : ";
+for (int i = 0; i < range5; i++)
+    cout << "*";
+cout << " " << range5 << endl;
+
 return 0;
 }
