@@ -64,5 +64,20 @@ cout << "Pass: " << pass << "students " << endl;
 cout << "Fail: " << fail << "students " << endl;
 cout << "Pass Rate: " << passRate << "%" << endl;
 
+//Find the highest and lowest scores
+double highest = scores[0];
+double lowest = scores[0];
+
+for (int i = 0; i < n; i++){
+    if (scores[i] > highest){
+        highest = scores[i];
+    }
+    if (scores[i] < lowest){
+        lowest = scores[i];
+    }
+}
+cout << "Highest score: " << highest << endl;
+cout << "lowest score: " << lowest << endl;
+
 return 0;
 }
