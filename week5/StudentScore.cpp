@@ -33,5 +33,17 @@ cout << "=====STUDENTS SCORES=====: " << endl;
 for (int i = 0; i < n; i++){
     cout << "Student " << i + 1 << ": " << scores[i] << endl;
 }
+
+//Pass or fail
+cout << endl;
+for (int i = 0; i < n; i++){
+    cout << "student " << i + 1 << ": ";
+    if (scores[i] >= 5){
+        cout << "Pass " << endl;
+    }
+    else{
+        cout << "Fail " << endl;
+    }
+}
 return 0;
 }
