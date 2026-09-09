@@ -253,5 +253,26 @@ for (int i = 0; i < n - 1; i++) {
         }
     }
 
+
+// 9. FIND THE LONGEST PASS STREAK
+int currentStreak = 0;
+int longestStreak = 0;
+
+for (int i = 0; i < n; i++) {
+    if (scores[i] >= 5) {
+        currentStreak++;
+
+        if (currentStreak > longestStreak) {
+                longestStreak = currentStreak;
+        }
+    }
+    else {
+            currentStreak = 0;
+    }
+}
+
+cout << "=====FIND THE LONGEST PASS STREAK=====";
+cout << "Longest pass streak: "
+     << longestStreak << " students";
 return 0;
 }
