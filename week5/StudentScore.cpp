@@ -26,5 +26,12 @@ while (scores[i] < 0 || scores[i] > 10)
         cin >> scores[i];
     }
 }
+
+//Display the array
+cout << endl;
+cout << "=====STUDENTS SCORES=====: " << endl;
+for (int i = 0; i < n; i++){
+    cout << "Student " << i + 1 << ": " << scores[i] << endl;
+}
 return 0;
 }
