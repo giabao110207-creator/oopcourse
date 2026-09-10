@@ -249,5 +249,18 @@ else
     cout << "No" << endl;
 }
 
+// 11. COUNT FLOWERS WITH LOW QUANTITY
+int lowQuantity = 0;
+for (int i = 0; i < n; i++)
+{
+    if (flowers[i].quantity < 5)
+    {
+        lowQuantity++;
+    }
+}
+cout << endl;
+cout << "===== LOW QUANTITY =====" << endl;
+cout << "Flowers with quantity < 5: "
+     << lowQuantity << endl;
 
 }
