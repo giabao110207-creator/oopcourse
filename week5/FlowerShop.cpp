@@ -67,7 +67,24 @@ for (int i = 0; i < n; i++)
         << flowers[i].type << endl;
 }
 
+// 2. FIND THE MOST EXPENSIVE FLOWER
+int maxPrice = 0;
 
+for (int i = 1; i < n; i++)
+{
+    if (flowers[i].price > flowers[maxPrice].price)
+    {
+        maxPrice = i;
+    }
+}
+
+cout << endl;
+cout << "===== MOST EXPENSIVE FLOWER =====" << endl;
+
+cout << "Name: " << flowers[maxPrice].name << endl;
+cout << "Price: " << flowers[maxPrice].price << endl;
+cout << "Quantity: " << flowers[maxPrice].quantity << endl;
+cout << "Type: " << flowers[maxPrice].type << endl;
 
 
 
