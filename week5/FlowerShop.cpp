@@ -86,7 +86,20 @@ cout << "Price: " << flowers[maxPrice].price << endl;
 cout << "Quantity: " << flowers[maxPrice].quantity << endl;
 cout << "Type: " << flowers[maxPrice].type << endl;
 
+// 3. FIND THE CHEAPEST FLOWER
+int minPrice = 0;
+for (int i = 1; i < n; i++)
+{
+    if (flowers[i].price < flowers[minPrice].price)
+    {
+        minPrice = i;
+    }
+}
 
+cout << endl;
+cout << "===== CHEAPEST FLOWER =====" << endl;
+cout << "Name: " << flowers[minPrice].name << endl;
+cout << "Price: " << flowers[minPrice].price << endl;
 
 
 }
