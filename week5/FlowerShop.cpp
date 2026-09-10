@@ -300,4 +300,33 @@ cout << "===== TOTAL VALUE =====" << endl;
 cout << "Total value: "
      << totalValue << endl;
 
+
+// 14. FIND THE MOST VALUABLE FLOWER
+int mostValuable = 0;
+for (int i = 1; i < n; i++)
+{
+    double value1 =
+        flowers[i].price * flowers[i].quantity;
+    double value2 = flowers[mostValuable].price * flowers[mostValuable].quantity;
+    if (value1 > value2)
+    {
+        mostValuable = i;
+    }
+}
+cout << endl;
+cout << "===== MOST VALUABLE FLOWER =====" << endl;
+
+cout << "Name: "
+        << flowers[mostValuable].name << endl;
+
+cout << "Price: "
+        << flowers[mostValuable].price << endl;
+
+cout << "Quantity: "
+        << flowers[mostValuable].quantity << endl;
+
+cout << "Value: "
+        << flowers[mostValuable].price * flowers[mostValuable].quantity
+        << endl;
+
 }
