@@ -352,4 +352,30 @@ for (int i = 0; i < n; i++)
     cout << flowers[i].name << " - " << flowers[i].price << endl;
 }
 
+// 16. SORT FLOWERS BY NAME
+cout << endl;
+cout << "===== SORT BY NAME =====" << endl;
+
+for (int i = 0; i < n - 1; i++)
+{
+    int minPos = i;
+
+    for (int j = i + 1; j < n; j++)
+    {
+        if (flowers[j].name < flowers[minPos].name)
+        {
+            minPos = j;
+        }
+    }
+
+    Flower temp = flowers[i];
+    flowers[i] = flowers[minPos];
+    flowers[minPos] = temp;
+}
+
+for (int i = 0; i < n; i++)
+{
+    cout << flowers[i].name << endl;
+}
+
 }
