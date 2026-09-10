@@ -116,6 +116,17 @@ cout << "===== LARGEST QUANTITY =====" << endl;
 cout << "Name: " << flowers[maxQuantity].name << endl;
 cout << "Quantity: " << flowers[maxQuantity].quantity << endl;
 
+// 5. CALCULATE TOTAL QUANTITY
+int totalQuantity = 0;
+for (int i = 0; i < n; i++)
+{
+    totalQuantity += flowers[i].quantity;
+}
+
+cout << endl;
+cout << "===== TOTAL QUANTITY =====" << endl;
+cout << "Total quantity: "
+     << totalQuantity << endl;
 
 
 }
