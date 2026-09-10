@@ -60,11 +60,7 @@ cout << "===== DISPLAY ALL FLOWERS =====" << endl;
 
 for (int i = 0; i < n; i++)
 {
-    cout << "Flower " << i + 1 << ": "
-        << flowers[i].name << " - "
-        << flowers[i].price << " - "
-        << flowers[i].quantity << " - "
-        << flowers[i].type << endl;
+    cout << "Flower " << i + 1 << ": " << flowers[i].name << " - " << flowers[i].price << " - " << flowers[i].quantity << " - " << flowers[i].type << endl;
 }
 
 // 2. FIND THE MOST EXPENSIVE FLOWER
@@ -125,8 +121,7 @@ for (int i = 0; i < n; i++)
 
 cout << endl;
 cout << "===== TOTAL QUANTITY =====" << endl;
-cout << "Total quantity: "
-     << totalQuantity << endl;
+cout << "Total quantity: " << totalQuantity << endl;
 
 // 6. CALCULATE AVERAGE PRICE
 double totalPrice = 0;
@@ -140,8 +135,7 @@ double averagePrice = totalPrice / n;
 cout << endl;
 cout << "===== AVERAGE PRICE =====" << endl;
 
-cout << "Average price: "
-     << averagePrice << endl;
+cout << "Average price: " << averagePrice << endl;
 
 // 7. COUNT FLOWERS BY TYPE
 cout << endl;
@@ -189,9 +183,7 @@ for (int i = 0; i < n; i++)
 {
     if (flowers[i].type == type)
     {
-            cout << flowers[i].name << " - "
-                 << flowers[i].price << " - "
-                 << flowers[i].quantity << endl;
+            cout << flowers[i].name << " - " << flowers[i].price << " - " << flowers[i].quantity << endl;
     }
 }
 
@@ -456,4 +448,40 @@ cout << flowers[i].type << ": " << average << endl;
     }
 }
 
+// 20. GENERATE A SIMPLE REPORT
+cout << endl;
+cout << "===== SIMPLE REPORT =====" << endl;
+cout << "Number of flowers: " << n << endl;
+cout << "Total quantity: " << totalQuantity << endl;
+cout << "Average price: " << averagePrice << endl;
+cout << "Total value: " << totalValue << endl;
+cout << "Flowers by type:" << endl;
+
+for (int i = 0; i < n; i++)
+{
+    bool counted = false;
+    for (int j = 0; j < i; j++)
+    {
+        if (flowers[i].type == flowers[j].type)
+        {
+            counted = true;
+        }
+    }
+
+    if (counted == false)
+    {
+        int count = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (flowers[j].type == flowers[i].type)
+            {
+                count++;
+            }
+        }
+
+    cout << flowers[i].type << ": " << count << endl;
+    }
+}
+
+return 0;
 }
