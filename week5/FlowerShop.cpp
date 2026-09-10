@@ -378,4 +378,32 @@ for (int i = 0; i < n; i++)
     cout << flowers[i].name << endl;
 }
 
+// 17. FIND TOP 3 MOST EXPENSIVE FLOWERS
+cout << endl;
+cout << "===== TOP 3 MOST EXPENSIVE =====" << endl;
+
+for (int i = 0; i < n - 1; i++)
+{
+    for (int j = i + 1; j < n; j++)
+    {
+        if (flowers[i].price < flowers[j].price)
+        {
+            Flower temp = flowers[i];
+            flowers[i] = flowers[j];
+            flowers[j] = temp;
+        }
+    }
+}
+
+int top = 3;
+if (n < 3)
+{
+    top = n;
+}
+
+for (int i = 0; i < top; i++)
+{
+    cout << i + 1 << ". " << flowers[i].name << " - " << flowers[i].price << endl;
+}
+
 }
