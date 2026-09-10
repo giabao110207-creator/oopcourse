@@ -128,5 +128,19 @@ cout << "===== TOTAL QUANTITY =====" << endl;
 cout << "Total quantity: "
      << totalQuantity << endl;
 
+// 6. CALCULATE AVERAGE PRICE
+double totalPrice = 0;
+
+for (int i = 0; i < n; i++)
+{
+    totalPrice += flowers[i].price;
+}
+double averagePrice = totalPrice / n;
+
+cout << endl;
+cout << "===== AVERAGE PRICE =====" << endl;
+
+cout << "Average price: "
+     << averagePrice << endl;
 
 }
