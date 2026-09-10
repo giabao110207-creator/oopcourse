@@ -263,4 +263,29 @@ cout << "===== LOW QUANTITY =====" << endl;
 cout << "Flowers with quantity < 5: "
      << lowQuantity << endl;
 
+// 12. COUNT FLOWERS IN A PRICE RANGE
+double a, b;
+int countRange = 0;
+
+cout << endl;
+cout << "===== COUNT FLOWERS IN A PRICE RANGE =====" << endl;
+cout << "Enter minimum price: ";
+cin >> a;
+cout << "Enter maximum price: ";
+cin >> b;
+for (int i = 0; i < n; i++)
+{
+    if (flowers[i].price >= a &&
+        flowers[i].price <= b)
+    {
+        countRange++;
+    }
+}
+
+cout << "Flowers in range ["
+        << a << ", " << b << "]: "
+        << countRange << endl;
+
+
+
 }
