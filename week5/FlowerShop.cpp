@@ -406,4 +406,20 @@ for (int i = 0; i < top; i++)
     cout << i + 1 << ". " << flowers[i].name << " - " << flowers[i].price << endl;
 }
 
+// 18. FIND FLOWERS WITH NAME CONTAINING KEYWORD
+string keyword;
+
+cout << endl;
+cout << "===== SEARCH BY KEYWORD =====" << endl;
+
+cout << "Enter keyword: ";
+cin >> keyword;
+for (int i = 0; i < n; i++)
+{
+    if (flowers[i].name.find(keyword) != string::npos)
+    {
+        cout << flowers[i].name << endl;
+    }
+}
+
 }
