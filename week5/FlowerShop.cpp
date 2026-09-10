@@ -223,4 +223,31 @@ if (found == false)
     cout << "Flower not found!" << endl;
 }
 
+// 10. CHECK IF A FLOWER EXISTS
+string searchName;
+bool exists = false;
+
+cout << endl;
+cout << "===== CHECK FLOWER EXISTS =====" << endl;
+
+cout << "Enter flower name: ";
+cin >> searchName;
+for (int i = 0; i < n; i++)
+{
+    if (flowers[i].name == searchName)
+    {
+        exists = true;
+    }
+}
+
+if (exists)
+{
+    cout << "Yes" << endl;
+}
+else
+{
+    cout << "No" << endl;
+}
+
+
 }
