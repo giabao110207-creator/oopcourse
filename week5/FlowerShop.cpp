@@ -422,4 +422,38 @@ for (int i = 0; i < n; i++)
     }
 }
 
+// 19. AVERAGE QUANTITY BY TYPE
+cout << endl;
+cout << "===== AVERAGE QUANTITY BY TYPE =====" << endl;
+for (int i = 0; i < n; i++)
+{
+    bool counted = false;
+
+    for (int j = 0; j < i; j++)
+    {
+        if (flowers[i].type == flowers[j].type)
+        {
+            counted = true;
+        }
+    }
+
+    if (counted == false)
+    {
+        int sum = 0;
+        int count = 0;
+
+        for (int j = 0; j < n; j++)
+        {
+            if (flowers[j].type == flowers[i].type)
+            {
+                sum += flowers[j].quantity;
+                count++;
+            }
+        }
+
+double average = (double)sum / count;
+cout << flowers[i].type << ": " << average << endl;
+    }
+}
+
 }
