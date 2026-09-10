@@ -286,6 +286,18 @@ cout << "Flowers in range ["
         << a << ", " << b << "]: "
         << countRange << endl;
 
+// 13. CALCULATE TOTAL VALUE
+double totalValue = 0;
 
+for (int i = 0; i < n; i++)
+{
+    totalValue += flowers[i].price * flowers[i].quantity;
+}
+
+cout << endl;
+cout << "===== TOTAL VALUE =====" << endl;
+
+cout << "Total value: "
+     << totalValue << endl;
 
 }
