@@ -101,5 +101,21 @@ cout << "===== CHEAPEST FLOWER =====" << endl;
 cout << "Name: " << flowers[minPrice].name << endl;
 cout << "Price: " << flowers[minPrice].price << endl;
 
+// 4. FIND THE FLOWER WITH THE LARGEST QUANTITY
+int maxQuantity = 0;
+
+for (int i = 1; i < n; i++)
+{
+    if (flowers[i].quantity > flowers[maxQuantity].quantity)
+    {
+        maxQuantity = i;
+    }
+}
+cout << endl;
+cout << "===== LARGEST QUANTITY =====" << endl;
+cout << "Name: " << flowers[maxQuantity].name << endl;
+cout << "Quantity: " << flowers[maxQuantity].quantity << endl;
+
+
 
 }
