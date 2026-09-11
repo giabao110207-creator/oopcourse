@@ -134,6 +134,17 @@ int lowQuantity = countLowQuantity(flowers, n);
 cout << endl;
 cout << "===== TASK 11: LOW QUANTITY =====" << endl;
 cout << "Flowers with quantity < 5: " << lowQuantity << endl;
+// TASK 12
+// COUNT FLOWERS IN A PRICE RANGE
+double a, b;
+cout << endl;
+cout << "===== TASK 12: PRICE RANGE =====" << endl;
+cout << "Enter minimum price: ";
+cin >> a;
+cout << "Enter maximum price: ";
+cin >> b;
+int countRange = countFlowersInPriceRange(flowers, n, a, b);
+cout << "Flowers in range ["<< a << ", " << b << "]: " << countRange << endl;
 
 }
 
@@ -308,4 +319,18 @@ for (int i = 0; i < n; i++){
     }
 }
 return lowQuantity;
+}
+
+// TASK 12
+// COUNT FLOWERS IN PRICE RANGE
+// =====================================================
+
+int countFlowersInPriceRange(Flower flowers[], int n, double a, double b){
+int countRange = 0;
+for (int i = 0; i < n; i++){
+    if (flowers[i].price >= a && flowers[i].price <= b){
+        countRange++;
+    }
+}
+return countRange;
 }
