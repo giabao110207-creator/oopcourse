@@ -119,6 +119,10 @@ cout << "Average price: " << averagePrice << endl;
 // TASK 7
 // COUNT FLOWERS BY TYPE
 countFlowersByType(flowers, n);
+// TASK 8
+// FIND ALL FLOWERS OF A GIVEN TYPE
+findFlowersByType(flowers, n);
+
 
 }
 
@@ -221,3 +225,19 @@ for (int i = 0; i < n; i++){
         }
     }
 }
+
+// TASK 8
+// FIND FLOWERS BY TYPE
+void findFlowersByType(Flower flowers[], int n){
+string type;
+cout << endl;
+cout << "===== TASK 8: FIND FLOWERS BY TYPE =====" << endl;
+cout << "Enter type: ";
+cin >> type;
+for (int i = 0; i < n; i++){
+    if (flowers[i].type == type){
+    cout << flowers[i].name << " - " << flowers[i].price << " - " << flowers[i].quantity << endl;
+        }
+    }
+}
+
