@@ -1,0 +1,106 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+#define MAX 20
+
+struct Flower
+{
+    string name;
+    double price;
+    int quantity;
+    string type;
+};
+
+void inputFlowers(Flower flowers[], int n);
+void displayFlowers(Flower flowers[], int n);
+int findMostExpensive(Flower flowers[], int n);
+int findCheapest(Flower flowers[], int n);
+int findLargestQuantity(Flower flowers[], int n);
+int calculateTotalQuantity(Flower flowers[], int n);
+double calculateAveragePrice(Flower flowers[], int n);
+void countFlowersByType(Flower flowers[], int n);
+void findFlowersByType(Flower flowers[], int n);
+void searchByName(Flower flowers[], int n);
+void checkFlowerExists(Flower flowers[], int n);
+int countLowQuantity(Flower flowers[], int n);
+int countFlowersInRange(Flower flowers[], int n, double a, double b);
+double calculateTotalValue(Flower flowers[], int n);
+int findMostValuable(Flower flowers[], int n);
+void sortByPriceAscending(Flower flowers[], int n);
+void sortByName(Flower flowers[], int n);
+void findTop3Expensive(Flower flowers[], int n);
+void searchByKeyword(Flower flowers[], int n);
+void averageQuantityByType(Flower flowers[], int n);
+void simpleReport(Flower flowers[], int n);
+
+int main(){
+int n;
+cout << "How many flowers: " << endl;
+cin >> n;
+while (n < 1 || n > 20){
+    cout << "Invalid number of flowers!" << endl;
+    cout << "Please enter a number from 1 to 20." << endl;
+    cout << "How many flowers? ";
+    cin >> n;
+}
+Flower flowers[MAX];
+inputFlowers(flowers, n);
+
+// TASK 1
+displayAllFlowers(flowers, n);
+}
+
+void inputFlowers(Flower flowers[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\nEnter information of flower "
+             << i + 1 << endl;
+
+        cout << "Enter name: ";
+        cin >> flowers[i].name;
+
+        cout << "Enter price: ";
+        cin >> flowers[i].price;
+
+        while (flowers[i].price <= 0)
+        {
+            cout << "Invalid price! "
+                 << "Please enter a value > 0: ";
+
+            cin >> flowers[i].price;
+        }
+
+        cout << "Enter quantity: ";
+        cin >> flowers[i].quantity;
+
+        while (flowers[i].quantity < 0)
+        {
+            cout << "Invalid quantity! "
+                 << "Please enter a value >= 0: ";
+
+            cin >> flowers[i].quantity;
+        }
+
+        cout << "Enter type: ";
+        cin >> flowers[i].type;
+    }
+}
+
+// TASK 1
+// DISPLAY ALL FLOWERS
+void displayAllFlowers(Flower flowers[], int n){
+cout << endl;
+cout << "===== TASK 1: DISPLAY ALL FLOWERS ====="
+        << endl;
+
+for (int i = 0; i < n; i++){
+    cout << "Flower " << i + 1 << ": "
+        << flowers[i].name << " - "
+        << flowers[i].price << " - "
+        << flowers[i].quantity << " - "
+        << flowers[i].type << endl;
+    }
+}
