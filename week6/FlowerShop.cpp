@@ -125,6 +125,9 @@ findFlowersByType(flowers, n);
 // TASK 9
 // SEARCH BY NAME
 searchByName(flowers, n);
+// TASK 10
+// CHECK IF A FLOWER EXISTS
+checkFlowerExists(flowers, n);
 
 
 }
@@ -265,5 +268,27 @@ for (int i = 0; i < n; i++){
     }
 }if (found == false){
     cout << "Flower not found!" << endl;
+}
+}
+
+// TASK 10
+// CHECK IF A FLOWER EXISTS
+void checkFlowerExists(Flower flowers[], int n){
+string searchName;
+bool exists = false;
+cout << endl;
+cout << "===== TASK 10: CHECK FLOWER EXISTS =====" << endl;
+cout << "Enter flower name: ";
+cin >> searchName;
+
+for (int i = 0; i < n; i++){
+    if (flowers[i].name == searchName){
+        exists = true;
+    }
+}
+if (exists){
+    cout << "Yes" << endl;
+}else{
+    cout << "No" << endl;
 }
 }
