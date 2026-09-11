@@ -50,40 +50,37 @@ inputFlowers(flowers, n);
 
 // TASK 1
 displayAllFlowers(flowers, n);
+
+// TASK 2
+// FIND THE MOST EXPENSIVE FLOWER
+int maxPrice = findMostExpensive(flowers, n);
+cout << endl;
+cout << "===== TASK 2: MOST EXPENSIVE FLOWER =====" << endl;
+cout << "Name: " << flowers[maxPrice].name << endl;
+cout << "Price: " << flowers[maxPrice].price << endl;
+cout << "Quantity: " << flowers[maxPrice].quantity << endl;
+cout << "Type: " << flowers[maxPrice].type << endl;
 }
 
-void inputFlowers(Flower flowers[], int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        cout << "\nEnter information of flower "
-             << i + 1 << endl;
+void inputFlowers(Flower flowers[], int n){
+for (int i = 0; i < n; i++){
+    cout << "\nEnter information of flower " << i + 1 << endl;
+    cout << "Enter name: ";
+    cin >> flowers[i].name;
 
-        cout << "Enter name: ";
-        cin >> flowers[i].name;
-
-        cout << "Enter price: ";
-        cin >> flowers[i].price;
-
-        while (flowers[i].price <= 0)
-        {
-            cout << "Invalid price! "
-                 << "Please enter a value > 0: ";
-
+    cout << "Enter price: ";
+    cin >> flowers[i].price;
+    while (flowers[i].price <= 0){
+        cout << "Invalid price! " << "Please enter a value > 0: ";
             cin >> flowers[i].price;
-        }
+    }
 
-        cout << "Enter quantity: ";
-        cin >> flowers[i].quantity;
-
-        while (flowers[i].quantity < 0)
-        {
-            cout << "Invalid quantity! "
-                 << "Please enter a value >= 0: ";
-
+    cout << "Enter quantity: ";
+    cin >> flowers[i].quantity;
+    while (flowers[i].quantity < 0){
+            cout << "Invalid quantity! " << "Please enter a value >= 0: ";
             cin >> flowers[i].quantity;
-        }
-
+    }
         cout << "Enter type: ";
         cin >> flowers[i].type;
     }
@@ -103,4 +100,17 @@ for (int i = 0; i < n; i++){
         << flowers[i].quantity << " - "
         << flowers[i].type << endl;
     }
+}
+
+// TASK 2
+// FIND MOST EXPENSIVE FLOWER
+int findMostExpensive(Flower flowers[], int n){
+int maxPrice = 0;
+for (int i = 1; i < n; i++){
+        if (flowers[i].price > flowers[maxPrice].price){
+            maxPrice = i;
+        }
+}
+
+return maxPrice;
 }
