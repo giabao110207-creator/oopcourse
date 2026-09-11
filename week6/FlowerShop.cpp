@@ -101,6 +101,13 @@ cout << endl;
 cout << "===== TASK 4: LARGEST QUANTITY =====" << endl;
 cout << "Name: " << flowers[maxQuantity].name << endl;
 cout << "Quantity: " << flowers[maxQuantity].quantity << endl;
+
+// TASK 5
+// CALCULATE TOTAL QUANTITY
+int totalQuantity = calculateTotalQuantity(flowers, n);
+cout << endl;
+cout << "===== TASK 5: TOTAL QUANTITY =====" << endl;
+cout << "Total quantity: " << totalQuantity << endl;
 }
 
 // TASK 1
@@ -154,4 +161,14 @@ for (int i = 1; i < n; i++){
     }
 }
  return maxQuantity;
+}
+
+// TASK 5
+// CALCULATE TOTAL QUANTITY
+int calculateTotalQuantity(Flower flowers[], int n){
+int totalQuantity = 0;
+for (int i = 0; i < n; i++){
+    totalQuantity += flowers[i].quantity;
+}
+return totalQuantity;
 }
