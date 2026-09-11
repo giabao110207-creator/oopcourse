@@ -108,6 +108,13 @@ int totalQuantity = calculateTotalQuantity(flowers, n);
 cout << endl;
 cout << "===== TASK 5: TOTAL QUANTITY =====" << endl;
 cout << "Total quantity: " << totalQuantity << endl;
+
+// TASK 6
+// CALCULATE AVERAGE PRICE
+double averagePrice = calculateAveragePrice(flowers, n);
+cout << endl;
+cout << "===== TASK 6: AVERAGE PRICE =====" << endl;
+cout << "Average price: " << averagePrice << endl;
 }
 
 // TASK 1
@@ -171,4 +178,15 @@ for (int i = 0; i < n; i++){
     totalQuantity += flowers[i].quantity;
 }
 return totalQuantity;
+}
+
+// TASK 6
+// CALCULATE AVERAGE PRICE
+double calculateAveragePrice(Flower flowers[], int n){
+double totalPrice = 0;
+for (int i = 0; i < n; i++){
+    totalPrice += flowers[i].price;
+}
+double averagePrice = totalPrice / n;
+return averagePrice;
 }
