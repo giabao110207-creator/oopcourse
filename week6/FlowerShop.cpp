@@ -94,6 +94,13 @@ cout << "===== TASK 3: CHEAPEST FLOWER =====" << endl;
 cout << "Name: " << flowers[minPrice].name << endl;
 cout << "Price: " << flowers[minPrice].price << endl;
 
+// TASK 4
+// FIND THE FLOWER WITH THE LARGEST QUANTITY
+int maxQuantity = findLargestQuantity(flowers, n);
+cout << endl;
+cout << "===== TASK 4: LARGEST QUANTITY =====" << endl;
+cout << "Name: " << flowers[maxQuantity].name << endl;
+cout << "Quantity: " << flowers[maxQuantity].quantity << endl;
 }
 
 // TASK 1
@@ -135,4 +142,16 @@ for (int i = 1; i < n; i++){
     }
 }
 return minPrice;
+}
+
+// TASK 4
+// FIND LARGEST QUANTITY
+int findLargestQuantity(Flower flowers[], int n){
+int maxQuantity = 0;
+for (int i = 1; i < n; i++){
+    if (flowers[i].quantity > flowers[maxQuantity].quantity){
+        maxQuantity = i;
+    }
+}
+ return maxQuantity;
 }
