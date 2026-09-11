@@ -151,7 +151,16 @@ double totalValue = calculateTotalValue(flowers, n);
 cout << endl;
 cout << "===== TASK 13: TOTAL VALUE =====" << endl;
 cout << "Total value: " << totalValue << endl;
-
+// TASK 14
+// FIND THE MOST VALUABLE FLOWER
+int mostValuable = findMostValuable(flowers, n);
+cout << endl;
+cout << "===== TASK 14: MOST VALUABLE FLOWER =====" << endl;
+cout << "Name: " << flowers[mostValuable].name << endl;
+cout << "Price: " << flowers[mostValuable].price << endl;
+cout << "Quantity: " << flowers[mostValuable].quantity << endl;
+cout << "Value: " << flowers[mostValuable].price *
+flowers[mostValuable].quantity << endl;
 
 }
 
@@ -350,4 +359,19 @@ for (int i = 0; i < n; i++){
     totalValue += flowers[i].price * flowers[i].quantity;
 }
 return totalValue;
+}
+
+// TASK 14
+// FIND MOST VALUABLE FLOWER
+int findMostValuable(Flower flowers[], int n){
+int mostValuable = 0;
+for (int i = 1; i < n; i++){
+    double value1 = flowers[i].price * flowers[i].quantity;
+    double value2 = flowers[mostValuable].price * flowers[mostValuable].quantity;
+    if (value1 > value2){
+        mostValuable = i;
+    }
+}
+
+    return mostValuable;
 }
