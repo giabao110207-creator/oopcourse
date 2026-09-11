@@ -128,7 +128,12 @@ searchByName(flowers, n);
 // TASK 10
 // CHECK IF A FLOWER EXISTS
 checkFlowerExists(flowers, n);
-
+// TASK 11
+// COUNT FLOWERS WITH LOW QUANTITY
+int lowQuantity = countLowQuantity(flowers, n);
+cout << endl;
+cout << "===== TASK 11: LOW QUANTITY =====" << endl;
+cout << "Flowers with quantity < 5: " << lowQuantity << endl;
 
 }
 
@@ -291,4 +296,16 @@ if (exists){
 }else{
     cout << "No" << endl;
 }
+}
+
+// TASK 11
+// COUNT FLOWERS WITH LOW QUANTITY
+int countLowQuantity(Flower flowers[], int n){
+int lowQuantity = 0;
+for (int i = 0; i < n; i++){
+    if (flowers[i].quantity < 5){
+        lowQuantity++;
+    }
+}
+return lowQuantity;
 }
