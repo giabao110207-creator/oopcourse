@@ -13,8 +13,6 @@ void showScore(string name, double score);
 double calculateAverage(double score1, double score2);
 int maxValue(int a, int b);
 
-
-
 int main(){
 // STEP 1
 // Gọi hàm không tham số
