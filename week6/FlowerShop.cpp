@@ -14,7 +14,7 @@ struct Flower
 };
 
 void inputFlowers(Flower flowers[], int n);
-void displayFlowers(Flower flowers[], int n);
+void displayAllFlowers(Flower flowers[], int n);
 int findMostExpensive(Flower flowers[], int n);
 int findCheapest(Flower flowers[], int n);
 int findLargestQuantity(Flower flowers[], int n);
@@ -60,30 +60,7 @@ cout << "Name: " << flowers[maxPrice].name << endl;
 cout << "Price: " << flowers[maxPrice].price << endl;
 cout << "Quantity: " << flowers[maxPrice].quantity << endl;
 cout << "Type: " << flowers[maxPrice].type << endl;
-}
 
-void inputFlowers(Flower flowers[], int n){
-for (int i = 0; i < n; i++){
-    cout << "\nEnter information of flower " << i + 1 << endl;
-    cout << "Enter name: ";
-    cin >> flowers[i].name;
-
-    cout << "Enter price: ";
-    cin >> flowers[i].price;
-    while (flowers[i].price <= 0){
-        cout << "Invalid price! " << "Please enter a value > 0: ";
-            cin >> flowers[i].price;
-    }
-
-    cout << "Enter quantity: ";
-    cin >> flowers[i].quantity;
-    while (flowers[i].quantity < 0){
-            cout << "Invalid quantity! " << "Please enter a value >= 0: ";
-            cin >> flowers[i].quantity;
-    }
-        cout << "Enter type: ";
-        cin >> flowers[i].type;
-    }
 
 // TASK 3
 // FIND THE CHEAPEST FLOWER
@@ -176,9 +153,36 @@ searchByKeyword(flowers, n);
 // TASK 19
 // CALCULATE AVERAGE QUANTITY BY TYPE
 averageQuantityByType(flowers, n);
+// TASK 20
+simpleReport(flowers, n);
 
+return 0;
 }
 
+
+void inputFlowers(Flower flowers[], int n){
+for (int i = 0; i < n; i++){
+    cout << "\nEnter information of flower " << i + 1 << endl;
+    cout << "Enter name: ";
+    cin >> flowers[i].name;
+
+    cout << "Enter price: ";
+    cin >> flowers[i].price;
+    while (flowers[i].price <= 0){
+        cout << "Invalid price! " << "Please enter a value > 0: ";
+            cin >> flowers[i].price;
+    }
+
+    cout << "Enter quantity: ";
+    cin >> flowers[i].quantity;
+    while (flowers[i].quantity < 0){
+            cout << "Invalid quantity! " << "Please enter a value >= 0: ";
+            cin >> flowers[i].quantity;
+    }
+        cout << "Enter type: ";
+        cin >> flowers[i].type;
+    }
+}
 // TASK 1
 // DISPLAY ALL FLOWERS
 void displayAllFlowers(Flower flowers[], int n){
@@ -506,6 +510,40 @@ for (int i = 0; i < n; i++){
         }
         double average = (double)sum / count;
         cout << flowers[i].type << ": " << average << endl;
+        }
+    }
+}
+
+// TASK 20
+// GENERATE A SIMPLE REPORT
+void simpleReport(Flower flowers[], int n){
+int totalQuantity = calculateTotalQuantity(flowers, n);
+double averagePrice = calculateAveragePrice(flowers, n);
+double totalValue = calculateTotalValue(flowers, n);
+
+cout << endl;
+cout << "===== TASK 20: SIMPLE REPORT =====" << endl;
+cout << "Number of flowers: " << n << endl;
+cout << "Total quantity: " << totalQuantity << endl;
+cout << "Average price: " << averagePrice << endl;
+cout << "Total value: " << totalValue << endl;
+cout << "Flowers by type:" << endl;
+
+for (int i = 0; i < n; i++){
+    bool counted = false;
+    for (int j = 0; j < i; j++){
+        if (flowers[i].type == flowers[j].type){
+            counted = true;
+        }
+    }
+    if (counted == false){
+        int count = 0;
+        for (int j = 0; j < n; j++){
+            if (flowers[j].type == flowers[i].type){
+            count++;
+            }
+        }
+        cout << flowers[i].type << ": " << count << endl;
         }
     }
 }
