@@ -44,6 +44,20 @@ cout << "Enter score: ";
 cin >> score;
 showScore(studentName, score);
 
+// STEP 4
+// Hàm có tham số và trả về kết quả
+cout << endl;
+cout << "===== STEP 4 =====" << endl;
+double math, english;
+
+cout << "Enter Math score: ";
+cin >> math;
+cout << "Enter English score: ";
+cin >> english;
+double average = calculateAverage(math, english);
+cout << "Average score = " << average << endl;
+
+
 return 0;
 }
 
@@ -94,4 +108,26 @@ void showScore(string name, double score)
     cout << "Student: " << name << endl;
     cout << "Score  : " << score << endl;
     cout << "Keep going!" << endl;
+}
+
+// STEP 4
+// Hàm có tham số và có giá trị trả về
+double calculateAverage(double score1, double score2)
+{
+    double sum = score1 + score2;
+    double avg = sum / 2;
+
+    return avg;
+}
+// Bài tập Step 4: maxValue()
+int maxValue(int a, int b)
+{
+    if (a > b)
+    {
+        return a;
+    }
+    else
+    {
+        return b;
+    }
 }
