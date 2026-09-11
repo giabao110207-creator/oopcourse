@@ -84,6 +84,16 @@ for (int i = 0; i < n; i++){
         cout << "Enter type: ";
         cin >> flowers[i].type;
     }
+
+// TASK 3
+// FIND THE CHEAPEST FLOWER
+int minPrice = findCheapest(flowers, n);
+
+cout << endl;
+cout << "===== TASK 3: CHEAPEST FLOWER =====" << endl;
+cout << "Name: " << flowers[minPrice].name << endl;
+cout << "Price: " << flowers[minPrice].price << endl;
+
 }
 
 // TASK 1
@@ -99,7 +109,7 @@ for (int i = 0; i < n; i++){
         << flowers[i].price << " - "
         << flowers[i].quantity << " - "
         << flowers[i].type << endl;
-    }
+}
 }
 
 // TASK 2
@@ -113,4 +123,16 @@ for (int i = 1; i < n; i++){
 }
 
 return maxPrice;
+}
+
+// TASK 3
+// FIND CHEAPEST FLOWER
+int findCheapest(Flower flowers[], int n){
+int minPrice = 0;
+for (int i = 1; i < n; i++){
+    if (flowers[i].price < flowers[minPrice].price){
+        minPrice = i;
+    }
+}
+return minPrice;
 }
