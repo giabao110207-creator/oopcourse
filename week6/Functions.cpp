@@ -57,6 +57,13 @@ cin >> english;
 double average = calculateAverage(math, english);
 cout << "Average score = " << average << endl;
 
+// Bài tập maxValue()
+int a, b;
+cout << endl;
+cout << "Enter two integers: ";
+cin >> a >> b;
+int max = maxValue(a, b);
+cout << "Maximum value = " << max << endl;
 
 return 0;
 }
