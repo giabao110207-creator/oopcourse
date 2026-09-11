@@ -34,6 +34,16 @@ cin >> studentID;
 showStudentName(studentName);
 showStudentID(studentID);
 
+// STEP 3
+// Gọi hàm có nhiều tham số
+cout << endl;
+cout << "===== STEP 3 =====" << endl;
+printStudentInfo(studentName, studentID);
+double score;
+cout << "Enter score: ";
+cin >> score;
+showScore(studentName, score);
+
 return 0;
 }
 
@@ -67,4 +77,21 @@ void showStudentName(string name)
 void showStudentID(int id)
 {
     cout << "Student ID: " << id << endl;
+}
+
+// STEP 3
+// Hàm có nhiều tham số và không có giá trị trả về
+void printStudentInfo(string name, int id)
+{
+    cout << "------------------------" << endl;
+    cout << "Name : " << name << endl;
+    cout << "ID   : " << id << endl;
+    cout << "------------------------" << endl;
+}
+// Bài tập Step 3: showScore()
+void showScore(string name, double score)
+{
+    cout << "Student: " << name << endl;
+    cout << "Score  : " << score << endl;
+    cout << "Keep going!" << endl;
 }
