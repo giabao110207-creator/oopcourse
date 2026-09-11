@@ -161,6 +161,9 @@ cout << "Price: " << flowers[mostValuable].price << endl;
 cout << "Quantity: " << flowers[mostValuable].quantity << endl;
 cout << "Value: " << flowers[mostValuable].price *
 flowers[mostValuable].quantity << endl;
+// TASK 15
+// SORT FLOWERS BY PRICE ASCENDING
+sortByPriceAscending(flowers, n);
 
 }
 
@@ -374,4 +377,25 @@ for (int i = 1; i < n; i++){
 }
 
     return mostValuable;
+}
+
+// TASK 15
+// SORT BY PRICE ASCENDING
+void sortByPriceAscending(Flower flowers[], int n){
+cout << endl;
+cout << "===== TASK 15: SORT BY PRICE ASCENDING =====" << endl;
+for (int i = 0; i < n - 1; i++){
+    int minPos = i;
+    for (int j = i + 1; j < n; j++){
+        if (flowers[j].price < flowers[minPos].price){
+        minPos = j;
+        }
+    }
+    Flower temp = flowers[i];
+    flowers[i] = flowers[minPos];
+    flowers[minPos] = temp;
+    }
+    for (int i = 0; i < n; i++){
+    cout << flowers[i].name << " - " << flowers[i].price << endl;
+    }
 }
