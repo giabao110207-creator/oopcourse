@@ -4,6 +4,16 @@
 
 using namespace std;
 
+
+struct ScoreInfo
+{
+    double sum;
+    double average;
+    int count;
+    double maxScore;
+    double minScore;
+};
+
 void showWelcome();
 void showMenu();
 void showStudentName(string name);
@@ -12,6 +22,8 @@ void printStudentInfo(string name, int id);
 void showScore(string name, double score);
 double calculateAverage(double score1, double score2);
 int maxValue(int a, int b);
+ScoreInfo analyzeScores(const vector<double>& scores);
+
 
 int main(){
 // STEP 1
@@ -64,6 +76,21 @@ cout << "Enter two integers: ";
 cin >> a >> b;
 int max = maxValue(a, b);
 cout << "Maximum value = " << max << endl;
+
+// STEP 5
+// Struct chứa nhiều kết quả
+cout << endl;
+cout << "===== STEP 5 =====" << endl;
+vector<double> scores = {8.5, 7.0, 9.5, 6.0, 8.0};
+ScoreInfo info = analyzeScores(scores);
+
+cout << "Total   : " << info.sum << endl;
+cout << "Average : " << info.average << endl;
+cout << "Count   : " << info.count << endl;
+cout << "Max     : " << info.maxScore << endl;
+cout << "Min     : " << info.minScore << endl;
+
+
 
 return 0;
 }
@@ -137,4 +164,47 @@ int maxValue(int a, int b)
     {
         return b;
     }
+}
+
+// STEP 5
+// Hàm trả về nhiều kết quả bằng struct
+ScoreInfo analyzeScores(const vector<double>& scores)
+{
+    ScoreInfo result;
+
+    result.sum = 0;
+    result.count = scores.size();
+
+    // Nếu không có điểm
+    if (result.count == 0)
+    {
+        result.average = 0;
+        result.maxScore = 0;
+        result.minScore = 0;
+
+        return result;
+    }
+
+    // Gán giá trị ban đầu
+    result.minScore = scores[0];
+    result.maxScore = scores[0];
+
+    // Duyệt qua danh sách điểm
+    for (double s : scores)
+    {
+        result.sum += s;
+
+        if (s > result.maxScore)
+        {
+            result.maxScore = s;
+        }
+
+        if (s < result.minScore)
+        {
+            result.minScore = s;
+        }
+    }
+    result.average = result.sum / result.count;
+
+    return result;
 }
