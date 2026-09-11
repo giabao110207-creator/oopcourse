@@ -24,3 +24,21 @@ showMenu();
 return 0;
 }
 
+// STEP 1
+// Hàm không có tham số và không có giá trị trả về
+void showWelcome()
+{
+    cout << "==============================" << endl;
+    cout << " Welcome to Student Manager!" << endl;
+    cout << "==============================" << endl;
+}
+// Bài tập Step 1: showMenu()
+void showMenu()
+{
+    cout << endl;
+    cout << "===== MENU =====" << endl;
+    cout << "1. Display students" << endl;
+    cout << "2. Show statistics" << endl;
+    cout << "3. Exit" << endl;
+    cout << "================" << endl;
+}
