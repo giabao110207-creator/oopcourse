@@ -12,7 +12,8 @@ void printStudentInfo(string name, int id);
 void showScore(string name, double score);
 double calculateAverage(double score1, double score2);
 int maxValue(int a, int b);
-ScoreInfo analyzeScores(const vector<double>& scores);
+
+
 
 int main(){
 // STEP 1
