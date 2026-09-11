@@ -122,6 +122,9 @@ countFlowersByType(flowers, n);
 // TASK 8
 // FIND ALL FLOWERS OF A GIVEN TYPE
 findFlowersByType(flowers, n);
+// TASK 9
+// SEARCH BY NAME
+searchByName(flowers, n);
 
 
 }
@@ -241,3 +244,26 @@ for (int i = 0; i < n; i++){
     }
 }
 
+// TASK 9
+// SEARCH BY NAME
+// =====================================================
+
+void searchByName(Flower flowers[], int n){
+string name;
+bool found = false;
+cout << endl;
+cout << "===== TASK 9: SEARCH BY NAME =====" << endl;
+cout << "Enter flower name: ";
+cin >> name;
+for (int i = 0; i < n; i++){
+    if (flowers[i].name == name){
+    cout << "Name: " << flowers[i].name << endl;
+    cout << "Price: " << flowers[i].price << endl;
+    cout << "Quantity: " << flowers[i].quantity << endl;
+    cout << "Type: " << flowers[i].type << endl;
+        found = true;
+    }
+}if (found == false){
+    cout << "Flower not found!" << endl;
+}
+}
