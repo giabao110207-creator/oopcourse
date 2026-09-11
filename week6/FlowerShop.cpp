@@ -145,6 +145,13 @@ cout << "Enter maximum price: ";
 cin >> b;
 int countRange = countFlowersInPriceRange(flowers, n, a, b);
 cout << "Flowers in range ["<< a << ", " << b << "]: " << countRange << endl;
+// TASK 13
+// CALCULATE TOTAL VALUE
+double totalValue = calculateTotalValue(flowers, n);
+cout << endl;
+cout << "===== TASK 13: TOTAL VALUE =====" << endl;
+cout << "Total value: " << totalValue << endl;
+
 
 }
 
@@ -333,4 +340,14 @@ for (int i = 0; i < n; i++){
     }
 }
 return countRange;
+}
+
+// TASK 13
+// CALCULATE TOTAL VALUE
+double calculateTotalValue(Flower flowers[], int n){
+double totalValue = 0;
+for (int i = 0; i < n; i++){
+    totalValue += flowers[i].price * flowers[i].quantity;
+}
+return totalValue;
 }
