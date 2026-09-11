@@ -115,6 +115,11 @@ double averagePrice = calculateAveragePrice(flowers, n);
 cout << endl;
 cout << "===== TASK 6: AVERAGE PRICE =====" << endl;
 cout << "Average price: " << averagePrice << endl;
+
+// TASK 7
+// COUNT FLOWERS BY TYPE
+countFlowersByType(flowers, n);
+
 }
 
 // TASK 1
@@ -189,4 +194,30 @@ for (int i = 0; i < n; i++){
 }
 double averagePrice = totalPrice / n;
 return averagePrice;
+}
+
+// TASK 7
+// COUNT FLOWERS BY TYPE
+// =====================================================
+
+void countFlowersByType(Flower flowers[], int n){
+cout << endl;
+cout << "===== TASK 7: COUNT FLOWERS BY TYPE =====" << endl;
+for (int i = 0; i < n; i++){
+    bool counted = false;
+    for (int j = 0; j < i; j++){
+        if (flowers[i].type == flowers[j].type){
+                counted = true;
+        }
+    }
+    if (counted == false){
+        int count = 0;
+        for (int j = 0; j < n; j++){
+            if (flowers[j].type == flowers[i].type){
+                count++;
+            }
+        }
+        cout << flowers[i].type << ": " << count << endl;
+        }
+    }
 }
