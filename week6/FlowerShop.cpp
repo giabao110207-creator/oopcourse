@@ -167,7 +167,9 @@ sortByPriceAscending(flowers, n);
 // TASK 16
 // SORT FLOWERS BY NAME
 sortByName(flowers, n);
-
+// TASK 17
+// FIND TOP 3 MOST EXPENSIVE FLOWERS
+findTop3MostExpensive(flowers, n);
 
 }
 
@@ -428,5 +430,31 @@ for (int i = 0; i < n - 1; i++){
 
     for (int i = 0; i < n; i++){
         cout << flowers[i].name << endl;
+    }
+}
+
+// TASK 17
+// FIND TOP 3 MOST EXPENSIVE FLOWERS
+// =====================================================
+
+void findTop3MostExpensive(Flower flowers[], int n){
+cout << endl;
+cout << "===== TASK 17: TOP 3 MOST EXPENSIVE =====" << endl;
+
+for (int i = 0; i < n - 1; i++){
+    for (int j = i + 1; j < n; j++){
+        if (flowers[i].price < flowers[j].price){
+            Flower temp = flowers[i];
+            flowers[i] = flowers[j];
+            flowers[j] = temp;
+        }
+    }
+}
+int top = 3;
+if (n < 3){
+    top = n;
+}
+for (int i = 0; i < top; i++){
+    cout << i + 1 << ". " << flowers[i].name << " - " << flowers[i].price << endl;
     }
 }
