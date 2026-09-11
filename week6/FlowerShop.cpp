@@ -170,7 +170,9 @@ sortByName(flowers, n);
 // TASK 17
 // FIND TOP 3 MOST EXPENSIVE FLOWERS
 findTop3MostExpensive(flowers, n);
-
+// TASK 18
+// FIND FLOWERS WITH NAME CONTAINING KEYWORD
+searchByKeyword(flowers, n);
 }
 
 // TASK 1
@@ -457,4 +459,22 @@ if (n < 3){
 for (int i = 0; i < top; i++){
     cout << i + 1 << ". " << flowers[i].name << " - " << flowers[i].price << endl;
     }
+}
+
+// TASK 18
+// SEARCH BY KEYWORD
+// =====================================================
+
+void searchByKeyword(Flower flowers[], int n){
+string keyword;
+cout << endl;
+cout << "===== TASK 18: SEARCH BY KEYWORD =====" << endl;
+
+cout << "Enter keyword: ";
+cin >> keyword;
+for (int i = 0; i < n; i++){
+    if (flowers[i].name.find(keyword) != string::npos){
+        cout << flowers[i].name << endl;
+    }
+}
 }
