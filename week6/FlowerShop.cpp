@@ -173,6 +173,10 @@ findTop3MostExpensive(flowers, n);
 // TASK 18
 // FIND FLOWERS WITH NAME CONTAINING KEYWORD
 searchByKeyword(flowers, n);
+// TASK 19
+// CALCULATE AVERAGE QUANTITY BY TYPE
+averageQuantityByType(flowers, n);
+
 }
 
 // TASK 1
@@ -477,4 +481,31 @@ for (int i = 0; i < n; i++){
         cout << flowers[i].name << endl;
     }
 }
+}
+
+// TASK 19
+// AVERAGE QUANTITY BY TYPE
+void averageQuantityByType(Flower flowers[], int n){
+cout << endl;
+cout << "===== TASK 19: AVERAGE QUANTITY BY TYPE =====" << endl;
+for (int i = 0; i < n; i++){
+    bool counted = false;
+    for (int j = 0; j < i; j++){
+        if (flowers[i].type == flowers[j].type){
+            counted = true;
+        }
+    }
+    if (counted == false){
+        int sum = 0;
+        int count = 0;
+        for (int j = 0; j < n; j++){
+            if (flowers[j].type == flowers[i].type){
+                sum += flowers[j].quantity;
+                count++;
+            }
+        }
+        double average = (double)sum / count;
+        cout << flowers[i].type << ": " << average << endl;
+        }
+    }
 }
