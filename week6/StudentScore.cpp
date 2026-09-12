@@ -105,6 +105,11 @@ compareAdjacentStudents(scores, n);
 // FIND THE LONGEST PASS STREAK
 findLongestPassStreak(scores, n);
 
+// TASK 15
+// CREATE A SCORE DISTRIBUTION
+createScoreDistribution(scores, n);
+
+return 0;
 
 }
 
@@ -393,4 +398,63 @@ for (int i = 0; i < n; i++){
 cout << endl;
 cout << "===== TASK 14: LONGEST PASS STREAK =====" << endl;
 cout << "Longest pass streak: " << longestStreak << " students" << endl;
+}
+
+// TASK 15
+// CREATE A SCORE DISTRIBUTION
+void createScoreDistribution(double scores[], int n){
+int range1 = 0;
+int range2 = 0;
+int range3 = 0;
+int range4 = 0;
+int range5 = 0;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] < 5){
+        range1++;
+    }else if (scores[i] < 6.5){
+        range2++;
+    }else if (scores[i] < 8){
+        range3++;
+    }else if (scores[i] < 9){
+        range4++;
+    }else{
+        range5++;
+    }
+}
+cout << endl;
+cout << "===== TASK 15: SCORE DISTRIBUTION =====" << endl;
+cout << "0 - <5     : ";
+for (int i = 0; i < range1; i++){
+    cout << "*";
+}
+
+cout << " " << range1 << endl;
+cout << "5 - <6.5   : ";
+
+for (int i = 0; i < range2; i++){
+    cout << "*";
+}
+
+cout << " " << range2 << endl;
+cout << "6.5 - <8   : ";
+
+for (int i = 0; i < range3; i++){
+    cout << "*";
+}
+
+cout << " " << range3 << endl;
+cout << "8 - <9     : ";
+for (int i = 0; i < range4; i++){
+    cout << "*";
+}
+
+cout << " " << range4 << endl;
+cout << "9 - 10     : ";
+
+for (int i = 0; i < range5; i++){
+    cout << "*";
+}
+
+cout << " " << range5 << endl;
 }
