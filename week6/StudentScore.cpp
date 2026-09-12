@@ -63,6 +63,19 @@ cout << endl;
 cout << "===== TASK 6: COUNT EXCELLENT STUDENTS =====" << endl;
 cout << "Number of excellent students: " << excellent << endl;
 
+// TASK 7
+// COUNT STUDENTS IN A SCORE RANGE
+double a, b;
+
+cout << endl;
+cout << "===== TASK 7: COUNT STUDENTS IN A SCORE RANGE =====" << endl;
+cout << "Enter minimum score: ";
+cin >> a;
+cout << "Enter maximum score: ";
+cin >> b;
+
+int countRange = countStudentsInRange(scores, n, a, b);
+cout << "Students in range [" << a << ", " << b << "]: " << countRange << endl;
 }
 
 // INPUT STUDENTS
@@ -188,4 +201,18 @@ for (int i = 0; i < n; i++){
 }
 
 return count;
+}
+
+// TASK 7
+// COUNT STUDENTS IN A SCORE RANGE
+int countStudentsInRange(double scores[],int n,double a,double b){
+int countRange = 0;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] >= a && scores[i] <= b){
+        countRange++;
+    }
+}
+
+ return countRange;
 }
