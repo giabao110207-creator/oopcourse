@@ -55,6 +55,14 @@ findHighestLowest(scores, n);
 // CLASSIFY STUDENTS
 classifyStudents(scores, n);
 
+// TASK 6
+// COUNT EXCELLENT STUDENTS
+   
+int excellent = countExcellent(scores, n);
+cout << endl;
+cout << "===== TASK 6: COUNT EXCELLENT STUDENTS =====" << endl;
+cout << "Number of excellent students: " << excellent << endl;
+
 }
 
 // INPUT STUDENTS
@@ -167,4 +175,17 @@ for (int i = 0; i < n; i++){
     }
     cout << endl;
     }
+}
+
+// TASK 6
+// COUNT EXCELLENT STUDENTS
+int countExcellent(double scores[], int n){
+int count = 0;
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 9){
+        count++;
+    }
+}
+
+return count;
 }
