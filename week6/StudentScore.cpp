@@ -80,6 +80,10 @@ cout << "Students in range [" << a << ", " << b << "]: " << countRange << endl;
 // TASK 8
 // FIND STUDENTS ABOVE AVERAGE
 findStudentsAboveAverage(scores, n);
+
+// TASK 9
+// FIND THE SECOND HIGHEST SCORE
+findSecondHighest(scores, n);
 }
 
 // INPUT STUDENTS
@@ -246,3 +250,29 @@ for (int i = 0; i < n; i++){
     }
 }
 
+// TASK 9
+// FIND SECOND HIGHEST SCORE
+// =====================================================
+
+void findSecondHighest(double scores[], int n){
+double highest = scores[0];
+double secondHighest = -1;
+for (int i = 1; i < n; i++){
+    if (scores[i] > highest){
+        secondHighest = highest;
+        highest = scores[i];
+    }else if (scores[i] > secondHighest && scores[i] < highest){
+        secondHighest = scores[i];
+    }
+}
+
+cout << endl;
+cout << "===== TASK 9: SECOND HIGHEST SCORE =====" << endl;
+cout << "Highest score: " << highest << endl;
+
+if (secondHighest == -1){
+    cout << "There is no second highest score." << endl;
+}else{
+    cout << "Second highest score: " << secondHighest << endl;
+    }
+}
