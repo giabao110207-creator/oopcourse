@@ -43,6 +43,10 @@ displayScores(scores, n);
 // PASS OR FAIL
 checkPassFail(scores, n);
 
+// TASK 3
+// COUNT STUDENTS
+countStudents(scores, n);
+
 
 }
 
@@ -86,4 +90,27 @@ for (int i = 0; i < n; i++){
     }
     cout << endl;
     }
+}
+
+// TASK 3
+// COUNT STUDENTS
+void countStudents(double scores[], int n){
+int pass = 0;
+int fail = 0;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 5){
+        pass++;
+    }else{
+        fail++;
+    }
+}
+
+double passRate = (double)pass / n * 100;
+
+cout << endl;
+cout << "===== TASK 3: STATISTICS =====" << endl;
+cout << "Passed: " << pass << " students" << endl;
+cout << "Failed: " << fail << " students" << endl;
+cout << "Pass rate: " << passRate << "%" << endl;
 }
