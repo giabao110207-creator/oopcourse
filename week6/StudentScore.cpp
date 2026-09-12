@@ -92,6 +92,11 @@ searchScore(scores, n);
 // TASK 11
 // COUNT SCORE FREQUENCY
 countScoreFrequency(scores, n);
+
+// TASK 12
+// FIND FIRST FAILING STUDENT
+findFirstFailingStudent(scores, n);
+
 }
 
 // INPUT STUDENTS
@@ -321,4 +326,27 @@ for (int i = 0; i < n; i++){
 }
 
 cout << "Score " << x << " appears " << frequency << " times." << endl;
+}
+
+// TASK 12
+// FIND FIRST FAILING STUDENT
+void findFirstFailingStudent(double scores[], int n){
+int firstFail = -1;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] < 5){
+        firstFail = i;
+        break;
+    }
+}
+
+cout << endl;
+cout << "===== TASK 12: FIRST FAILING STUDENT =====" << endl;
+
+if (firstFail == -1){
+    cout << "All students pass!" << endl;
+}else{
+    cout << "First failing student:" << endl;
+    cout << "Student "  << firstFail + 1 << ": " << scores[firstFail] << endl;
+    }
 }
