@@ -84,6 +84,10 @@ findStudentsAboveAverage(scores, n);
 // TASK 9
 // FIND THE SECOND HIGHEST SCORE
 findSecondHighest(scores, n);
+
+// TASK 10
+// SEARCH FOR A SCORE
+searchScore(scores, n);
 }
 
 // INPUT STUDENTS
@@ -252,8 +256,6 @@ for (int i = 0; i < n; i++){
 
 // TASK 9
 // FIND SECOND HIGHEST SCORE
-// =====================================================
-
 void findSecondHighest(double scores[], int n){
 double highest = scores[0];
 double secondHighest = -1;
@@ -276,3 +278,25 @@ if (secondHighest == -1){
     cout << "Second highest score: " << secondHighest << endl;
     }
 }
+
+// TASK 10
+// SEARCH FOR A SCORE
+void searchScore(double scores[], int n){
+double x;
+bool found = false;
+cout << endl;
+cout << "===== TASK 10: SEARCH FOR A SCORE =====" << endl;
+
+cout << "Enter score to search: ";
+cin >> x;
+cout << "Found at:" << endl;
+for (int i = 0; i < n; i++){
+    if (scores[i] == x){
+        cout << "Student " << i + 1 << endl;
+        found = true;
+    }
+}if (found == false){
+    cout << "Score not found!" << endl;
+}
+}
+
