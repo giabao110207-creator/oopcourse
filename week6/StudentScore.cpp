@@ -76,6 +76,10 @@ cin >> b;
 
 int countRange = countStudentsInRange(scores, n, a, b);
 cout << "Students in range [" << a << ", " << b << "]: " << countRange << endl;
+
+// TASK 8
+// FIND STUDENTS ABOVE AVERAGE
+findStudentsAboveAverage(scores, n);
 }
 
 // INPUT STUDENTS
@@ -216,3 +220,29 @@ for (int i = 0; i < n; i++){
 
  return countRange;
 }
+
+// TASK 8
+// FIND STUDENTS ABOVE AVERAGE
+// =====================================================
+
+void findStudentsAboveAverage(double scores[], int n){
+double sum = 0;
+
+for (int i = 0; i < n; i++){
+    sum += scores[i];
+}
+double average = sum / n;
+
+cout << endl;
+cout << "===== TASK 8: STUDENTS ABOVE AVERAGE =====" << endl;
+
+cout << "Average score: " << average << endl;
+cout << "Students above average:" << endl;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] > average){
+        cout << "Student " << i + 1 << ": " << scores[i] << endl;
+        }
+    }
+}
+
