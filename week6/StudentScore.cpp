@@ -51,6 +51,10 @@ countStudents(scores, n);
 // FIND HIGHEST AND LOWEST SCORE
 findHighestLowest(scores, n);
 
+// TASK 5
+// CLASSIFY STUDENTS
+classifyStudents(scores, n);
+
 }
 
 // INPUT STUDENTS
@@ -141,3 +145,26 @@ cout << "Highest score: " << highest << endl;
 cout << "Lowest score: " << lowest << endl;
 }
 
+// TASK 5
+// CLASSIFY STUDENTS
+// =====================================================
+
+void classifyStudents(double scores[], int n){
+cout << endl;
+cout << "===== TASK 5: CLASSIFICATION =====" << endl;
+for (int i = 0; i < n; i++){
+    cout << "Student " << i + 1 << ": " << scores[i] << " -> ";
+    if (scores[i] >= 9){
+        cout << "Excellent";
+    }else if (scores[i] >= 8){
+        cout << "Very Good";
+    }else if (scores[i] >= 6.5){
+        cout << "Good";
+    }else if (scores[i] >= 5){
+        cout << "Average";
+    }else{
+        cout << "Fail";
+    }
+    cout << endl;
+    }
+}
