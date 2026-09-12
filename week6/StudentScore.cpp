@@ -88,6 +88,10 @@ findSecondHighest(scores, n);
 // TASK 10
 // SEARCH FOR A SCORE
 searchScore(scores, n);
+
+// TASK 11
+// COUNT SCORE FREQUENCY
+countScoreFrequency(scores, n);
 }
 
 // INPUT STUDENTS
@@ -300,3 +304,21 @@ for (int i = 0; i < n; i++){
 }
 }
 
+// TASK 11
+// COUNT SCORE FREQUENCY
+void countScoreFrequency(double scores[], int n){
+double x;
+int frequency = 0;
+
+cout << endl;
+cout << "===== TASK 11: COUNT SCORE FREQUENCY =====" << endl;
+cout << "Enter score: ";
+cin >> x;
+for (int i = 0; i < n; i++){
+    if (scores[i] == x){
+        frequency++;
+    }
+}
+
+cout << "Score " << x << " appears " << frequency << " times." << endl;
+}
