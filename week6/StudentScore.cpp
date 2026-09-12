@@ -38,6 +38,12 @@ inputStudents(scores, n);
 // TASK 1
 // DISPLAY THE ARRAY
 displayScores(scores, n);
+
+// TASK 2
+// PASS OR FAIL
+checkPassFail(scores, n);
+
+
 }
 
 // INPUT STUDENTS
@@ -62,3 +68,22 @@ for (int i = 0; i < n; i++){
     }
 }
 
+// TASK 2
+// PASS OR FAIL
+// =====================================================
+
+void checkPassFail(double scores[], int n){
+cout << endl;
+cout << "===== TASK 2: PASS OR FAIL =====" << endl;
+
+for (int i = 0; i < n; i++){
+    cout << "Student " << i + 1 << ": ";
+
+    if (scores[i] >= 5){
+        cout << "PASS";
+    }else{
+        cout << "FAIL";
+    }
+    cout << endl;
+    }
+}
