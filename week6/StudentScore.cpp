@@ -47,6 +47,9 @@ checkPassFail(scores, n);
 // COUNT STUDENTS
 countStudents(scores, n);
 
+// TASK 4
+// FIND HIGHEST AND LOWEST SCORE
+findHighestLowest(scores, n);
 
 }
 
@@ -114,3 +117,27 @@ cout << "Passed: " << pass << " students" << endl;
 cout << "Failed: " << fail << " students" << endl;
 cout << "Pass rate: " << passRate << "%" << endl;
 }
+
+// TASK 4
+// FIND HIGHEST AND LOWEST SCORE
+// =====================================================
+
+void findHighestLowest(double scores[], int n){
+double highest = scores[0];
+double lowest = scores[0];
+
+for (int i = 1; i < n; i++){
+    if (scores[i] > highest){
+        highest = scores[i];
+    }
+    if (scores[i] < lowest){
+        lowest = scores[i];
+    }
+}
+
+cout << endl;
+cout << "===== TASK 4: HIGHEST AND LOWEST =====" << endl;
+cout << "Highest score: " << highest << endl;
+cout << "Lowest score: " << lowest << endl;
+}
+
