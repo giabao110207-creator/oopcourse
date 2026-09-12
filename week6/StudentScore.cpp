@@ -97,6 +97,11 @@ countScoreFrequency(scores, n);
 // FIND FIRST FAILING STUDENT
 findFirstFailingStudent(scores, n);
 
+// TASK 13
+// COMPARE ADJACENT STUDENTS
+compareAdjacentStudents(scores, n);
+
+
 }
 
 // INPUT STUDENTS
@@ -350,3 +355,17 @@ if (firstFail == -1){
     cout << "Student "  << firstFail + 1 << ": " << scores[firstFail] << endl;
     }
 }
+
+// TASK 13
+// COMPARE ADJACENT STUDENTS
+void compareAdjacentStudents(double scores[], int n){
+cout << endl;
+cout << "===== TASK 13: COMPARE ADJACENT STUDENTS =====" << endl;
+
+for (int i = 0; i < n - 1; i++){
+    if (scores[i + 1] > scores[i]){
+        cout << "Student " << i + 2 << " improved compared to Student " << i + 1 << endl;
+        }
+    }
+}
+
