@@ -101,6 +101,10 @@ findFirstFailingStudent(scores, n);
 // COMPARE ADJACENT STUDENTS
 compareAdjacentStudents(scores, n);
 
+// TASK 14
+// FIND THE LONGEST PASS STREAK
+findLongestPassStreak(scores, n);
+
 
 }
 
@@ -369,3 +373,24 @@ for (int i = 0; i < n - 1; i++){
     }
 }
 
+// TASK 14
+// FIND LONGEST PASS STREAK
+void findLongestPassStreak(double scores[], int n){
+int currentStreak = 0;
+int longestStreak = 0;
+
+for (int i = 0; i < n; i++){
+    if (scores[i] >= 5){
+        currentStreak++;
+        if (currentStreak > longestStreak){
+            longestStreak = currentStreak;
+        }
+    }else{
+        currentStreak = 0;
+    }
+}
+
+cout << endl;
+cout << "===== TASK 14: LONGEST PASS STREAK =====" << endl;
+cout << "Longest pass streak: " << longestStreak << " students" << endl;
+}
