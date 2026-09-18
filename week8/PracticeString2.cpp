@@ -3,28 +3,50 @@
 
 using namespace std;
 
-int main(){
-string sentence;
+int main (){
+    string s1 = "Hello";
+    string s2 = "C++";
+    cout << s1 << endl;
+    cout << s2 << endl;
 
-// 1. Nhap mot cau
-cout << "Enter a sentence: ";
-getline(cin, sentence);
-// 2. Hien thi do dai cau
-cout << "Length: " << sentence.length() << endl;
-// 3. Tim vi tri cua "C++"
-size_t pos = sentence.find("C++");
-// 4. Neu tim thay, in tu bat dau tu vi tri do
-if (pos != string::npos){
-    cout << "Found C++ at position: " << pos << endl;
-    cout << "Substring: " << sentence.substr(pos) << endl;
-}else{
-    cout << "C++ not found!" << endl;
-}
-// 5. Thay "C++" bang "Programming"
-if (pos != string::npos){
-    sentence.replace(pos, 3, "Programming");
-}
-cout << "New sentence: " << sentence << endl;
+    string name;
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Hello, " << name << "!" << endl;
 
-return 0;
+    string first = "Hello";
+    string second = "World";
+    string messages = first + " " + second + " ";
+    cout << messages << endl;
+
+    string s = "Hello C++";
+    cout << "Length: " << s.length() << endl;
+
+    string s_char = "Hello";
+    cout << "First character : " << s_char[0] << endl;
+    cout << "Third character: " << s_char[2] << endl;
+
+    string text = "I love C++!";
+    size_t pos = text.find("C++");
+    if (pos != string::npos){
+        cout << "Found at position: " << pos << endl;
+    }
+    else {
+        cout << "Not found!" << endl;
+    }
+
+    string text2 = "Hello C++ World";
+    string part = text2.substr(6, 3);
+    cout << part << endl;
+
+    string str1 = "apple";
+    string str2 = "apple";
+    if (str1.compare(str2) == 0){
+        cout << "The strings are equal. " << endl;
+    }
+    else {
+        cout << "The strings are different. " << endl;
+    }
+
+    return 0;
 }
