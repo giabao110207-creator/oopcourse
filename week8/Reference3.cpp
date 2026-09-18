@@ -4,13 +4,7 @@ using namespace std;
 
 int main()
 {
-    // =========================
-    // PHAN 1
-    // =========================
-
     int a = 5;
-
-    // r la reference cua a
     int& r = a;
 
     // Thay doi gia tri thong qua reference
