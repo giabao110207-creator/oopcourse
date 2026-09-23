@@ -317,6 +317,31 @@ int findOrderById(Restaurant r, string id) {
 
     return -1;
 }
+
+// 11. CAP NHAT TRANG THAI DON HANG
+// =============================================================
+void updateOrderStatus(Restaurant &r) {
+    string id;
+    cin.ignore();
+    cout << "Nhap ma don hang: ";
+    getline(cin, id);
+
+    int index = findOrderById(r, id);
+
+    if (index == -1) {
+        cout << "Khong tim thay don hang!\n";
+        return;
+    }
+}
+
+// HIEN THI THONG TIN CUA HANG
+void showRestaurant(Restaurant r) {
+    cout << "\n========== THONG TIN CUA HANG ==========\n";
+
+    cout << "Ten cua hang: " << r.name << endl;
+    cout << "Dia chi: " << r.address << endl;
+    cout << "So dien thoai: " << r.phone << endl;
+}
 int main(){
 Restaurant restaurant;
 int choice;
