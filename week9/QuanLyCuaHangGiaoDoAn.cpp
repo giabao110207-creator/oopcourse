@@ -334,6 +334,19 @@ void updateOrderStatus(Restaurant &r) {
     }
 }
 
+
+// 12. THONG KE TONG DOANH THU CAC DON DA HOAN THANH
+void calculateRevenue(Restaurant r) {
+    double total = 0;
+    for (int i = 0; i < r.orderCount; i++) {
+
+        if (r.orders[i].status == "Hoan thanh") {
+            total += calculateOrderMoney(r.orders[i]);
+        }
+    }
+    cout << fixed << setprecision(2);
+    cout << "Tong doanh thu: " << total << " VND\n";
+}
 // HIEN THI THONG TIN CUA HANG
 void showRestaurant(Restaurant r) {
     cout << "\n========== THONG TIN CUA HANG ==========\n";
