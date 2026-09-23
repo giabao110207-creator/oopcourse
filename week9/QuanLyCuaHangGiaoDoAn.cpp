@@ -307,7 +307,16 @@ void showOrders(Restaurant r) {
     }
 }
 
+// 10. TIM DON HANG THEO MA
+int findOrderById(Restaurant r, string id) {
+    for (int i = 0; i < r.orderCount; i++) {
+        if (r.orders[i].id == id) {
+            return i;
+        }
+    }
 
+    return -1;
+}
 int main(){
 Restaurant restaurant;
 int choice;
