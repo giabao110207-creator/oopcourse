@@ -209,6 +209,57 @@ void updateFood(Restaurant &r) {
 
     cout << "Cap nhat thanh cong!\n";
 }
+
+// 6. TAO DON HANG MOI
+void createOrder(Restaurant &r) {
+    if (r.orderCount >= MAX) {
+        cout << "Danh sach don hang da day!\n";
+        return;
+    }
+    Order o;
+    cin.ignore();
+    cout << "Nhap ma don hang: ";
+    getline(cin, o.id);
+    cout << "Nhap ten khach hang: ";
+    getline(cin, o.customerName);
+    cout << "Nhap dia chi giao hang: ";
+    getline(cin, o.address);
+    string foodId;
+    cout << "Nhap ma mon an: ";
+    getline(cin, foodId);
+    int index = findFoodById(r, foodId);
+
+    if (index == -1) {
+        cout << "Khong tim thay mon an!\n";
+        return;
+    }
+
+    cout << "Mon an: " << r.foods[index].name << endl;
+    cout << "Gia: " << r.foods[index].price << endl;
+    cout << "So luong con lai: " << r.foods[index].quantity << endl;
+    cout << "Nhap so luong dat: ";
+    cin >> o.quantity;
+    // Kiem tra so luong
+    if (o.quantity <= 0) {
+        cout << "So luong khong hop le!\n";
+        return;
+    }
+    if (o.quantity > r.foods[index].quantity) {
+        cout << "Khong du so luong mon an!\n";
+        return;
+    }
+    // Gan mon an cho don hang
+    o.food = r.foods[index];
+    // Tru so luong mon an trong kho
+    r.foods[index].quantity -= o.quantity;
+    // Trang thai ban dau
+    o.status = "Cho xac nhan";
+    r.orders[r.orderCount] = o;
+    r.orderCount++;
+
+    cout << "Tao don hang thanh cong!\n";
+}
+
 int main(){
 Restaurant restaurant;
 int choice;
