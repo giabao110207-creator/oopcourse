@@ -260,6 +260,27 @@ void createOrder(Restaurant &r) {
     cout << "Tao don hang thanh cong!\n";
 }
 
+// 7. KIEM TRA MON AN CO TON TAI VA DU SO LUONG
+void checkFood(Restaurant r) {
+    string id;
+    int quantity;
+    cout << "Nhap ma mon: ";
+    cin >> id;
+    int index = findFoodById(r, id);
+    if (index == -1) {
+        cout << "Mon an khong ton tai!\n";
+        return;
+    }
+    cout << "Nhap so luong can mua: ";
+    cin >> quantity;
+
+    if (quantity <= r.foods[index].quantity) {
+        cout << "Mon an ton tai va DU so luong.\n";
+    }
+    else {
+        cout << "Mon an co ton tai nhung KHONG DU so luong.\n";
+    }
+}
 int main(){
 Restaurant restaurant;
 int choice;
