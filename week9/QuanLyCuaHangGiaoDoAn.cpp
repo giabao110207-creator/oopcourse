@@ -143,6 +143,41 @@ int findFoodByName(Restaurant r, string name) {
     return -1;
 }
 
+// 4. TIM MON AN THEO MA HOAC TEN
+void searchFood(Restaurant r) {
+    int choice;
+    string key;
+    cout << "\n1. Tim theo ma mon";
+    cout << "\n2. Tim theo ten mon";
+    cout << "\nChon: ";
+    cin >> choice;
+    cin.ignore();
+
+    cout << "Nhap thong tin can tim: ";
+    getline(cin, key);
+
+    int index = -1;
+    if (choice == 1) {
+        index = findFoodById(r, key);
+    }
+    else if (choice == 2) {
+        index = findFoodByName(r, key);
+    }
+    else {
+        cout << "Lua chon khong hop le!\n";
+        return;
+    }
+    if (index == -1) {
+        cout << "Khong tim thay mon an!\n";
+    }
+    else {
+        cout << "\n===== THONG TIN MON AN =====\n";
+        cout << "Ma mon: " << r.foods[index].id << endl;
+        cout << "Ten mon: " << r.foods[index].name << endl;
+        cout << "Don gia: " << r.foods[index].price << endl;
+        cout << "So luong: " << r.foods[index].quantity << endl;
+    }
+}
 int main(){
 Restaurant restaurant;
 int choice;
