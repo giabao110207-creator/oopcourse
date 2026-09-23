@@ -285,6 +285,29 @@ void checkFood(Restaurant r) {
 double calculateOrderMoney(Order o) {
     return o.food.price * o.quantity;
 }
+
+// 9. HIEN THI DANH SACH DON HANG
+void showOrders(Restaurant r) {
+    if (r.orderCount == 0) {
+        cout << "Chua co don hang!\n";
+        return;
+    }
+    cout << "\n========== DANH SACH DON HANG ==========\n";
+    for (int i = 0; i < r.orderCount; i++) {
+
+        cout << "\nDon hang thu " << i + 1 << endl;
+        cout << "Ma don hang: " << r.orders[i].id << endl;
+        cout << "Khach hang: " << r.orders[i].customerName << endl;
+        cout << "Dia chi: " << r.orders[i].address << endl;
+        cout << "Mon an: " << r.orders[i].food.name << endl;
+        cout << "So luong: " << r.orders[i].quantity << endl;
+        cout << "Don gia: " << r.orders[i].food.price << endl;
+        cout << "Tong tien: " << calculateOrderMoney(r.orders[i]) << endl;
+        cout << "Trang thai: " << r.orders[i].status << endl;
+    }
+}
+
+
 int main(){
 Restaurant restaurant;
 int choice;
