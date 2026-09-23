@@ -178,6 +178,37 @@ void searchFood(Restaurant r) {
         cout << "So luong: " << r.foods[index].quantity << endl;
     }
 }
+
+// 5. CAP NHAT GIA HOAC SO LUONG MON AN
+void updateFood(Restaurant &r) {
+    string id;
+    cout << "Nhap ma mon can cap nhat: ";
+    cin >> id;
+    int index = findFoodById(r, id);
+    if (index == -1) {
+        cout << "Khong tim thay mon!\n";
+        return;
+    }
+    int choice;
+    cout << "\n1. Cap nhat gia";
+    cout << "\n2. Cap nhat so luong";
+    cout << "\nChon: ";
+    cin >> choice;
+    if (choice == 1) {
+        cout << "Nhap gia moi: ";
+        cin >> r.foods[index].price;
+    }
+    else if (choice == 2) {
+        cout << "Nhap so luong moi: ";
+        cin >> r.foods[index].quantity;
+    }
+    else {
+        cout << "Lua chon khong hop le!\n";
+        return;
+    }
+
+    cout << "Cap nhat thanh cong!\n";
+}
 int main(){
 Restaurant restaurant;
 int choice;
