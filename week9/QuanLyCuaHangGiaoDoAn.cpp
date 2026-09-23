@@ -281,6 +281,10 @@ void checkFood(Restaurant r) {
         cout << "Mon an co ton tai nhung KHONG DU so luong.\n";
     }
 }
+// 8. TINH TONG TIEN CUA DON HANG
+double calculateOrderMoney(Order o) {
+    return o.food.price * o.quantity;
+}
 int main(){
 Restaurant restaurant;
 int choice;
