@@ -122,6 +122,27 @@ void showFoods(Restaurant r) {
     }
 }
 
+// HAM TIM MON THEO MA
+int findFoodById(Restaurant r, string id) {
+    for (int i = 0; i < r.foodCount; i++) {
+        if (r.foods[i].id == id) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+// HAM TIM MON THEO TEN
+int findFoodByName(Restaurant r, string name) {
+    for (int i = 0; i < r.foodCount; i++) {
+        if (r.foods[i].name == name) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 int main(){
 Restaurant restaurant;
 int choice;
