@@ -183,6 +183,16 @@ static vector<int> statisticByProvince(vector<Student> students, vector<string> 
     }
     return counts;
 }
+
+// 6. Tim danh sach Student theo tinh / thanh pho 
+vector<Student> getStudentsByProvince( vector<Student> students, string province ) { 
+    vector<Student> result; 
+    for (int i = 0; i < students.size(); i++) { 
+        if (students[i].getAddress().find(province) != string::npos) { 
+            result.push_back(students[i]); } 
+        } 
+        return result; 
+    }
 int main() {
 
     // Tao cac Student
@@ -285,6 +295,16 @@ int main() {
     // 5. Thong ke theo nam sinh
     vector<int> years;
     years.push_back(2000);
+    years.push_back(2001);
+
+    vector<int> yearCounts = statisticByYear(students, years); 
+    for (int i = 0; i < years.size(); i++) { 
+        cout << "Year " << years[i] << ": " << yearCounts[i] << " student(s)" << endl; 
+        vector<Student> yearList = getStudentsByYear(students, years[i]); 
+        for (int j = 0; j < yearList.size(); j++) { 
+            yearList[j].displayStudentInfo(); 
+        }
+    }
 
     // 6. Thong ke theo tinh / thanh pho
     vector<string> provinces;
@@ -293,6 +313,14 @@ int main() {
     provinces.push_back("Binh Duong"); 
     provinces.push_back("Ha Noi"); 
     provinces.push_back("Da Nang");
+
+    vector<int> provinceCounts = statisticByProvince(students, provinces); 
+    for (int i = 0; i < provinces.size(); i++) { cout << provinces[i] << ": " << provinceCounts[i] << " student(s)" << endl; 
+        vector<Student> provinceList = getStudentsByProvince(students, provinces[i]); 
+        for (int j = 0; j < provinceList.size(); j++) { 
+            provinceList[j].displayStudentInfo(); 
+        }
+    }
 
     return 0;
 }
