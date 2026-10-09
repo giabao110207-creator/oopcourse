@@ -52,7 +52,42 @@ public:
         characteristic = ch;
     }
 
+  // ================== CAU 3: Getter va Setter ==================
+    // Getter
+    int getId() {
+        return id;
+    }
+    string getName() {
+        return name;
+    }
+    string getColor() {
+        return color;
+    }
+    string getCharacteristic() {
+        return characteristic;
+    }
+    // Setter
+    void setId(int i) {
+        id = i;
+    }
+    void setName(string n) {
+        name = n;
+    }
+    void setColor(string c) {
+        color = c;
+    }
+    void setCharacteristic(string ch) {
+        characteristic = ch;
+    }
 
+    // ================== CAU 4: Hien thi thong tin ==================
+    void displayFishInfo() {
+        cout << "ID             : " << id << endl;
+        cout << "Name           : " << name << endl;
+        cout << "Color          : " << color << endl;
+        cout << "Characteristic : " << characteristic << endl;
+        cout << "-----------------------------------" << endl;
+    }
 
     };
 
