@@ -3,6 +3,22 @@
 #include <vector>
 using namespace std;
 
+// ================== Lop Date ==================
+class Date {
+public:
+    int year, month, day;
+    Date() {
+        year = 0;
+        month = 0;
+        day = 0;
+    }
+    Date(int y, int m, int d) {
+        year = y;
+        month = m;
+        day = d;
+    }
+};
+
 // ================== CAU 7: Lop Category ==================
 class Category {
 private:
@@ -162,6 +178,118 @@ public:
     }
 };
 
+// ================== CAU 1: Lop FishShop ==================
+class FishShop {
+private:
+    int id;
+    string name;
+    string address;
+    string owner;
+    Date startdate;
+    vector<Category> categories;   // Category[] categories
+    vector<Fish> fishes;           // Fish[] fishes
+
+public:
+    // Constructors
+    FishShop() {
+        id = 0;
+        name = "";
+        address = "";
+        owner = "";
+        startdate = Date();
+    }
+    FishShop(int i, string n, string addr, string o, Date d) {
+        id = i;
+        name = n;
+        address = addr;
+        owner = o;
+        startdate = d;
+    }
+ // ================== CAU 2: Getter ==================
+    int getId() {
+        return id;
+    }
+    string getName() {
+        return name;
+    }
+    string getAddress() {
+        return address;
+    }
+    string getOwner() {
+        return owner;
+    }
+    Date getStartDate() {
+        return startdate;
+    }
+    vector<Category> getCategories() {
+        return categories;
+    }
+    vector<Fish> getFishes() {
+        return fishes;
+    }
+
+    // ================== CAU 2: Setter ==================
+    void setId(int i) {
+        id = i;
+    }
+    void setName(string n) {
+        name = n;
+    }
+    void setAddress(string addr) {
+        address = addr;
+    }
+    void setOwner(string o) {
+        owner = o;
+    }
+    void setStartDate(Date d) {
+        startdate = d;
+    }
+    void setCategories(vector<Category> c) {
+        categories = c;
+    }
+    void setFishes(vector<Fish> f) {
+        fishes = f;
+    }
+
+    // Them 1 category / 1 fish vao cua hang
+    void addCategory(Category c) {
+        categories.push_back(c);
+    }
+    void addFish(Fish f) {
+        fishes.push_back(f);
+    }
+
+    // ================== CAU 2: Display ==================
+    // Hien thi thong tin cua hang (khong gom danh sach)
+    void displayShopInfo() {
+        cout << "====================" << endl;
+        cout << "=== Fish Shop Info ===" << endl;
+        cout << "====================" << endl;
+        cout << "ID         : " << id << endl;
+        cout << "Name       : " << name << endl;
+        cout << "Address    : " << address << endl;
+        cout << "Owner      : " << owner << endl;
+        cout << "Start date : " << startdate.year << "/" << startdate.month << "/" << startdate.day << endl;
+        cout << "So category: " << categories.size() << endl;
+        cout << "So ca      : " << fishes.size() << endl;
+    }
+
+    // Hien thi tat ca category
+    void displayCategories() {
+        cout << "\n===== DANH SACH CATEGORY =====" << endl;
+        for (int i = 0; i < categories.size(); i++) {
+            categories[i].displayCategoryInfo();
+        }
+    }
+
+    // Hien thi tat ca ca
+    void displayFishes() {
+        cout << "\n===== DANH SACH TAT CA CA (" << fishes.size() << " con) =====" << endl;
+        for (int i = 0; i < fishes.size(); i++) {
+            fishes[i].displayFishInfo();
+        }
+    }
+};
 
 // ================== CAU 6: Tim danh sach Fish theo mau ==================
 vector<Fish> getFishByColor(vector<Fish> fishList, string color) {
@@ -318,6 +446,85 @@ int main() {
     else {
         for (int i = 0; i < listByCategory.size(); i++) {
             listByCategory[i].displayFishInfo();
+        }
+    }
+
+     // =====================================================================
+    // ================== FISHSHOP - CAU 3: main() ==========================
+    // =====================================================================
+
+    // Tao cua hang ca canh
+    Date shopDate(2024, 1, 15);
+    FishShop shop(1, "Cua Hang Ca Canh Sai Gon", "Vo Van Ngan, Thu Duc", "Nguyen Van An", shopDate);
+
+    // Tao 4 category
+    Category shopCat1(1, "Ca Nuoc Ngot", "Ca nuoi trong be kinh nuoc ngot");
+    Category shopCat2(2, "Ca Nuoc Man", "Ca bien, can be nuoc man chuyen dung");
+    Category shopCat3(3, "Ca Ho", "Ca nuoi trong ho, be ngoai troi");
+    Category shopCat4(4, "Ca Rong", "Ca rong lon, quy hiem");
+
+    shop.addCategory(shopCat1);
+    shop.addCategory(shopCat2);
+    shop.addCategory(shopCat3);
+    shop.addCategory(shopCat4);
+
+    // Du lieu 10 con ca cho moi category
+    string names1[10] = { "Ca Neon", "Ca Thien Than", "Ca Dia", "Ca Betta", "Ca Bay Mau",
+                          "Ca Chuot", "Ca He", "Ca Ngua Van", "Ca Ho Bao", "Ca Tu Quy" };
+    string colors1[10] = { "Xanh duong", "Bac", "Do", "Xanh la", "Cam",
+                           "Den", "Vang", "Bac", "Den", "Do" };
+
+    string names2[10] = { "Ca Hanh Phuc", "Ca Bac Si Xanh", "Ca Su Tu", "Ca Buom", "Ca Mao Tien",
+                          "Ca Gai", "Ca Chim", "Ca Bom", "Ca Mat Quy", "Ca Hai Ma" };
+    string colors2[10] = { "Cam", "Xanh duong", "Do", "Vang", "Trang",
+                           "Den", "Xanh la", "Vang", "Do", "Bac" };
+
+    string names3[10] = { "Ca Chep Nhat", "Ca Vang Duoi Dai", "Ca Koi Do", "Ca Koi Trang", "Ca Tre",
+                          "Ca Tram", "Ca Diec", "Ca Ro", "Ca Loc", "Ca Rep" };
+    string colors3[10] = { "Do", "Cam", "Do", "Trang", "Bac",
+                           "Den", "Xanh la", "Vang", "Den", "Cam" };
+
+    string names4[10] = { "Ca Rong Kim Long", "Ca Rong Huyet Long", "Ca Rong Thanh Long", "Ca Rong Ngan Long", "Ca Rong Den",
+                          "Ca Rong Do", "Ca Rong Bach Kim", "Ca Rong Xanh", "Ca Rong Vang", "Ca Rong Cam" };
+    string colors4[10] = { "Vang", "Do", "Xanh la", "Bac", "Den",
+                           "Do", "Trang", "Xanh duong", "Vang", "Cam" };
+
+    // Nhap du lieu: moi category 10 con ca
+    for (int j = 0; j < 10; j++) {
+        Fish f(j + 1, names1[j], colors1[j], "Phu hop nuoi be kinh nuoc ngot", 1);
+        shop.addFish(f);
+    }
+    for (int j = 0; j < 10; j++) {
+        Fish f(10 + j + 1, names2[j], colors2[j], "Can be nuoc man chuyen dung", 2);
+        shop.addFish(f);
+    }
+    for (int j = 0; j < 10; j++) {
+        Fish f(20 + j + 1, names3[j], colors3[j], "Song tot trong ho ngoai troi", 3);
+        shop.addFish(f);
+    }
+    for (int j = 0; j < 10; j++) {
+        Fish f(30 + j + 1, names4[j], colors4[j], "Ca lon, gia tri cao", 4);
+        shop.addFish(f);
+    }
+
+    // Hien thi thong tin cua hang
+    cout << "\n\n";
+    shop.displayShopInfo();
+
+    // Hien thi tat ca category cua hang
+    shop.displayCategories();
+
+    // Hien thi ca theo tung category cua hang
+    vector<Category> shopCategories = shop.getCategories();
+    vector<Fish> shopFishes = shop.getFishes();
+
+    cout << "\n===== CA THEO TUNG CATEGORY CUA HANG =====" << endl;
+    for (int i = 0; i < shopCategories.size(); i++) {
+        vector<Fish> shopListByCategory = getFishByCategory(shopFishes, shopCategories[i].getCategoryId());
+        cout << "\n*** CATEGORY " << shopCategories[i].getCategoryName()
+             << ": " << shopListByCategory.size() << " con ***" << endl;
+        for (int j = 0; j < shopListByCategory.size(); j++) {
+            shopListByCategory[j].displayFishInfo();
         }
     }
 
